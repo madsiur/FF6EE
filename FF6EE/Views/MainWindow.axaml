@@ -1,0 +1,25 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:FF6EE.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="500"
+        x:Class="FF6EE.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/app-icon.ico"
+        Title="FF6EE" Height="500" Width="900">
+
+    <Window.Background>
+        <ImageBrush Source="/Assets/loading-background.png" />
+    </Window.Background>
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ContentControl Grid.Column="0" Content="{Binding CurrentView}"/>
+    </Grid>
+
+</Window>

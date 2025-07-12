@@ -1,0 +1,116 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="using:FF6EE.Components">
+
+    <Styles.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="/Styles/Colors.axaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Control Template -->
+            <ControlTemplate x:Key="MenuItemControlTemplate" TargetType="{x:Type c:AppMenuItem}">
+                <Grid>
+                    <Border x:Name="Border"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Border Padding="{TemplateBinding Padding}"
+                                Grid.Column="1">
+                                <ContentPresenter x:Name="HeaderHost"
+                                    Content="{TemplateBinding Header}"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{TemplateBinding FontFamily}"
+                                    FontSize="{TemplateBinding FontSize}"
+                                    FontWeight="{TemplateBinding FontWeight}"
+                                    RenderOptions.TextRenderingMode="SubpixelAntialias" />
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <Popup x:Name="SubMenuPopup"
+                        Placement="AnchorAndGravity"
+                        PlacementAnchor="BottomLeft"
+                        PlacementGravity="BottomRight"
+                        IsOpen="{TemplateBinding IsSubMenuOpen}"
+                        WindowManagerAddShadowHint="False">
+                        <Border x:Name="SubMenuBorder"
+                            Background="{TemplateBinding BackgroundColor}"
+                            BorderBrush="{TemplateBinding BorderColor}"
+                            BorderThickness="1">
+                            <ItemsPresenter />
+                        </Border>
+                    </Popup>
+                </Grid>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </Styles.Resources>
+
+    <!-- Default Menu style -->
+    <Style Selector="Menu">
+        <Setter Property="Background" Value="{StaticResource MainMenuBackgroundColor}"/>
+    </Style>
+
+    <!-- Default AppMenuItem style -->
+    <Style Selector="c|AppMenuItem">
+        <Setter Property="Foreground" Value="{StaticResource MenuForegroundColor}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Padding" Value="5,3" />
+        <Setter Property="Template" Value="{StaticResource MenuItemControlTemplate}"/>
+        <Setter Property="ForegroundIsDisabledColor" Value="{StaticResource MenuForegroundIsDisabledColor}"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource MenuBackgroundColor}"/>
+        <Setter Property="BorderColor" Value="{StaticResource MenuBorderColor}"/>
+        <Setter Property="BorderIsMouseOverColor" Value="{StaticResource MenuBorderIsMouseOverColor}"/>
+        <Setter Property="BorderIsPressedColor" Value="{StaticResource MenuBorderIsPressedColor}"/>
+    </Style>
+
+    <!-- MainMenuItemStyle class -->
+    <Style Selector="c|AppMenuItem.MainMenuItemStyle">
+        <Setter Property="BackgroundColor" Value="{StaticResource MainMenuBackgroundColor}"/>
+        <Setter Property="BorderColor" Value="{StaticResource MainMenuBorderColor}"/>
+        <Setter Property="BorderIsMouseOverColor" Value="{StaticResource MainMenuBorderIsMouseOverColor}"/>
+        <Setter Property="BorderIsPressedColor" Value="{StaticResource MainMenuBorderIsPressedColor}"/>
+        <Setter Property="FontFamily" Value="Ubuntu Mono, Cascadia Code, Consolas, Monaco, monospace"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+    </Style>
+
+    <!-- DefaultMenuItemStyle class -->
+    <Style Selector="c|AppMenuItem.DefaultMenuItemStyle">
+        <Setter Property="BackgroundColor" Value="{StaticResource MenuBackgroundColor}"/>
+        <Setter Property="BorderColor" Value="{StaticResource MenuBorderColor}"/>
+        <Setter Property="BorderIsMouseOverColor" Value="{StaticResource MenuBorderIsMouseOverColor}"/>
+        <Setter Property="BorderIsPressedColor" Value="{StaticResource MenuBorderIsPressedColor}"/>
+    </Style>
+
+    <!-- Pseudo-class styles for MainMenuItemStyle -->
+    <Style Selector="c|AppMenuItem.MainMenuItemStyle:pointerover /template/ Border#Border">
+        <Setter Property="Background" Value="{StaticResource MainMenuBorderIsMouseOverColor}"/>
+    </Style>
+
+    <Style Selector="c|AppMenuItem.MainMenuItemStyle:pressed /template/ Border#Border">
+        <Setter Property="Background" Value="{StaticResource MainMenuBorderIsPressedColor}"/>
+    </Style>
+
+    <Style Selector="c|AppMenuItem.MainMenuItemStyle:disabled /template/ ContentPresenter#HeaderHost">
+        <Setter Property="Foreground" Value="{StaticResource MenuForegroundIsDisabledColor}"/>
+    </Style>
+
+    <!-- Pseudo-class styles for DefaultMenuItemStyle -->
+    <Style Selector="c|AppMenuItem.DefaultMenuItemStyle:pointerover /template/ Border#Border">
+        <Setter Property="Background" Value="{StaticResource MenuBorderIsMouseOverColor}"/>
+    </Style>
+
+    <Style Selector="c|AppMenuItem.DefaultMenuItemStyle:pressed /template/ Border#Border">
+        <Setter Property="Background" Value="{StaticResource MenuBorderIsPressedColor}"/>
+    </Style>
+
+    <Style Selector="c|AppMenuItem.DefaultMenuItemStyle:disabled /template/ ContentPresenter#HeaderHost">
+        <Setter Property="Foreground" Value="{StaticResource MenuForegroundIsDisabledColor}"/>
+    </Style>
+
+</Styles>

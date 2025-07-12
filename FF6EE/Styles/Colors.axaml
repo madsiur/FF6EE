@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="MenuForegroundColor">#FF101010</SolidColorBrush>
+    <SolidColorBrush x:Key="MenuForegroundIsDisabledColor">#FF606060</SolidColorBrush>
+
+    <SolidColorBrush x:Key="MenuBackgroundColor">#FFE0E0E0</SolidColorBrush>
+    <SolidColorBrush x:Key="MenuBackgroundIsPressedColor">#FFE0E0E0</SolidColorBrush>
+    <SolidColorBrush x:Key="MenuBackgroundIsMouseOverColor">#FFD8D8D8</SolidColorBrush>
+
+    <SolidColorBrush x:Key="MenuBorderColor">#FFC8C8C8</SolidColorBrush>
+    <SolidColorBrush x:Key="MenuBorderIsPressedColor">#FFC8C8C8</SolidColorBrush>
+    <SolidColorBrush x:Key="MenuBorderIsMouseOverColor">#FFC0C0C0</SolidColorBrush>
+
+    <SolidColorBrush x:Key="MainMenuBackgroundColor">#A0E0E0E0</SolidColorBrush>
+    <SolidColorBrush x:Key="MainMenuBackgroundIsPressedColor">#A0E0E0E0</SolidColorBrush>
+    <SolidColorBrush x:Key="MainMenuBackgroundIsMouseOverColor">#A0D8D8D8</SolidColorBrush>
+
+    <SolidColorBrush x:Key="MainMenuBorderColor">#A0C8C8C8</SolidColorBrush>
+    <SolidColorBrush x:Key="MainMenuBorderIsPressedColor">#A0C8C8C8</SolidColorBrush>
+    <SolidColorBrush x:Key="MainMenuBorderIsMouseOverColor">#A0C0C0C0</SolidColorBrush>
+
+    <SolidColorBrush x:Key="LoadingLabelForegroundColor">#F0101010</SolidColorBrush>
+    <SolidColorBrush x:Key="LoadingLabelBackgroundColor">#C8C0C0C0</SolidColorBrush>
+    <SolidColorBrush x:Key="LoadingLabelBorderColor">#C8808080</SolidColorBrush>
+
+</ResourceDictionary>

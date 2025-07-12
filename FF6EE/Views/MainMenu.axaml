@@ -1,0 +1,50 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:c="using:FF6EE.Components"
+             xmlns:vm="using:FF6EE.ViewModels"
+             x:Class="FF6EE.Views.MainMenu"
+             x:DataType="vm:MainMenuViewModel">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" VerticalAlignment="Top" Padding="0,0">
+            <c:AppMenuItem Header="File" Classes="MainMenuItemStyle">
+                <c:AppMenuItem Header="Open ROM"
+                               Command="{Binding FileOpenRomCommand}"
+                               IsEnabled="{Binding CanOpenFile}"
+                               Classes="MainMenuItemStyle"/>
+                <c:AppMenuItem Header="Save ROM"
+                               Command="{Binding FileSaveRomCommand}"
+                               IsEnabled="{Binding IsRomLoaded}"
+                               Classes="MainMenuItemStyle"/>
+                <c:AppMenuItem Header="Exit"
+                               Command="{Binding FileExitCommand}"
+                               Classes="MainMenuItemStyle"/>
+            </c:AppMenuItem>
+            <c:AppMenuItem Header="Editors"
+                           IsEnabled="{Binding IsRomLoaded}"
+                           Classes="MainMenuItemStyle">
+                <c:AppMenuItem Header="Monsters"
+                               Command="{Binding MonsterEditorCommand}"
+                               Classes="MainMenuItemStyle"/>
+            </c:AppMenuItem>
+            <c:AppMenuItem Header="Settings" Classes="MainMenuItemStyle">
+                <c:AppMenuItem Header="Expansions"
+                               Command="{Binding SettingsExpansionsCommand}"
+                               IsEnabled="{Binding IsRomLoaded}"
+                               Classes="MainMenuItemStyle"/>
+                <c:AppMenuItem Header="Editor"
+                               Command="{Binding SettingsEditorCommand}"
+                               Classes="MainMenuItemStyle"/>
+            </c:AppMenuItem>
+            <c:AppMenuItem Header="Help" Classes="MainMenuItemStyle">
+                <c:AppMenuItem Header="About"
+                               Command="{Binding HelpAboutCommand}"
+                               Classes="MainMenuItemStyle"/>
+            </c:AppMenuItem>
+        </Menu>
+        <ContentControl Grid.Row="1" Content="{Binding CurrentView}" />
+    </Grid>
+</UserControl>

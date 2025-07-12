@@ -1,0 +1,99 @@
+﻿{
+  "maker_code": {
+    "name": "Maker code",
+    "offset": "0xFFB0",
+    "length": 2
+  },
+  "game_code": {
+    "name": "Game code",
+    "offset": "0xFFB2",
+    "length": 4
+  },
+  "cartridge_title": {
+    "name": "Title",
+    "offset": "0xFFC0",
+    "length": 21
+  },
+  "rom_speed_map_mode": {
+    "name": "Speed / Map mode",
+    "offset": "0xFFD5",
+    "length": 1,
+    "values": {
+      "20": "SlowROM / LoROM",
+      "21": "SlowROM / HiROM",
+      "25": "SlowROM / ExHiROM",
+      "30": "FastROM / LoROM",
+      "31": "FastROM / HiROM",
+      "35": "FastROM / ExHiROM"
+    }
+  },
+  "cartridge_type": {
+    "name": "Type",
+    "offset": "0xFFD6",
+    "length": 1,
+    "values": {
+      "00": "ROM only",
+      "01": "ROM + RAM",
+      "02": "ROM + RAM + battery",
+      "x3": "ROM",
+      "x4": "ROM + RAM",
+      "x5": "ROM + RAM + battery",
+      "x6": "ROM + battery",
+      "0x": "DSP",
+      "1x": "SuperFX",
+      "2x": "OBC1",
+      "3x": "SA-1",
+      "4x": "S-DD1",
+      "5x": "S-RTC",
+      "Ex": "Other",
+      "Fx": "Custom"
+    }
+  },
+  "rom_size": {
+    "name": "ROM size (SNES header)",
+    "offset": "0xFFD7",
+    "length": 1,
+    "values": {
+      "08": "256 KB",
+      "09": "512 KB",
+      "0A": "1024 KB (1 MB)",
+      "0B": "2048 KB (2 MB)",
+      "0C": "4096 KB (4 MB)",
+      "0D": "8192 KB (8 MB)"
+    }
+  },
+  "ram_size": {
+    "name": "RAM size",
+    "offset": "0xFFD8",
+    "length": 1,
+    "values": {
+      "01": "2 KB",
+      "02": "4 KB",
+      "03": "8 KB",
+      "04": "16 KB",
+      "05": "32 KB",
+      "06": "64 KB",
+      "07": "128 KB"
+    }
+  },
+  "developer_id": {
+    "name": "Developer ID",
+    "offset": "0xFFD9",
+    "length": 1
+  },
+  "version": {
+    "name": "Version",
+    "offset": "0xFFDB",
+    "length": 1
+  },
+  "checksum_complement": {
+    "name": "Checksum complement",
+    "offset": "0xFFDC",
+    "length": 2
+  },
+  "checksum": {
+    "name": "Checksum (SNES header)",
+    "offset": "0xFFDE",
+    "length": 2
+  }
+}

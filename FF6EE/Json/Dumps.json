@@ -1,0 +1,23 @@
+﻿[
+  {
+    "Id": 1,
+    "Name": "Final Fantasy III (USA).sfc",
+    "Size": 3145728,
+    "Checksum": "5f32",
+    "MD5": "e986575b98300f721ce27c180264d890"
+  },
+  {
+    "Id": 2,
+    "Name": "Final Fantasy III (USA) (Rev 1).sfc",
+    "Size": 3145728,
+    "Checksum": "8a60",
+    "MD5": "544311e104805e926083acf29ec664da"
+  },
+  {
+    "Id": 3,
+    "Name": "Final Fantasy VI (Japan).sfc",
+    "Size": 3145728,
+    "Checksum": "a172",
+    "MD5": "97bf78e916b80f47cf35edf502be34dc"
+  }
+]
